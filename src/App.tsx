@@ -1,22 +1,35 @@
 import { useState } from 'react'
 import './App.css'
-import { ComponenteComProps } from './components/ComponenteComProps'
-import { PrimeiroComponenteClasse } from './components/PrimeiroComponenteClasse'
-import { PrimeiroComponenteFuncao } from './components/PrimeiroComponenteFuncao'
-import { SegundoComponente } from './components/SegundoComponente'
+import { ConteudoPage } from './pages/ConteudoPage'
+import { ExercicioPage } from './pages/ExercicioPage'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showPage, setShowPage] = useState<"conteudo" | "exercicio">("conteudo");
 
   // JSX - HTML tunado -> Utilizar JS em conjunto com o HTML
   return (
     <div className="App">
-      <PrimeiroComponenteFuncao />
-      <PrimeiroComponenteClasse />
-      <SegundoComponente />
-      <ComponenteComProps nome="William" notas={[10, 9, 8, 7, 6]} />
-      <ComponenteComProps nome="Maria" notas={[8, 8, 8]} />
-      <ComponenteComProps nome="João" notas={[2, 2, 2]} />
+      <nav>
+        <ul style={{ display: "flex", listStyleType: "none", justifyContent: "center" }}>
+          <li 
+            onClick={() => setShowPage("conteudo")} 
+            style={{ 
+              cursor: "pointer", 
+              marginRight: 5, 
+              textDecoration: showPage === "conteudo" ? "underline" : ""
+            }}>Conteúdo</li>
+          <li 
+            onClick={() => setShowPage("exercicio")} 
+            style={{ 
+              cursor: "pointer", 
+              textDecoration: showPage === "exercicio" ? "underline" : ""
+            }}
+          >Exercício</li>
+        </ul>
+      </nav>
+      {
+        showPage === "conteudo" ? <ConteudoPage /> : <ExercicioPage />
+      }
     </div>
   )
 }
