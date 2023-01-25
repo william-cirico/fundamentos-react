@@ -1,0 +1,23 @@
+.tabela-produtos {
+    border-collapse: collapse;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.tabela-produtos th, .tabela-produtos td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.tabela-produtos thead {
+    background-color: #ddd;
+}
+
+.tabela-produtos tr:nth-child(even) {
+    background-color: rgb(244, 244, 244);
+}
+
+.tabela-produtos tr:hover {
+    background-color: #ddd;
+}

@@ -4,7 +4,7 @@ import { ConteudoPage } from './pages/ConteudoPage'
 import { ExercicioPage } from './pages/ExercicioPage'
 
 function App() {
-  const [showPage, setShowPage] = useState<"conteudo" | "exercicio">("conteudo");
+  const [showPage, setShowPage] = useState<"conteudo" | "exercicio">("exercicio");
 
   // JSX - HTML tunado -> Utilizar JS em conjunto com o HTML
   return (

@@ -1,0 +1,14 @@
+.formulario-pesquisa {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.formulario-pesquisa input {
+    padding: 5px 2px;
+    margin-bottom: 10px;
+}
+
+.formulario-pesquisa label {
+    align-self: flex-start;
+}
